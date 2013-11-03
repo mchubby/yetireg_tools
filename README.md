@@ -1,6 +1,7 @@
 # About
 
-A collection of three scripts for processing scripts from PSP and Xbox 360 versions of Cross + Channel.
+A collection of three scripts for processing scripts from PSP and Xbox 360 versions of a particular "Yeti" and "Regista" game engine.
+You may recognize it by the presence of a ``sn.bin`` file and several ``.afs`` archives.
 
 
 ## extract_snbin.py

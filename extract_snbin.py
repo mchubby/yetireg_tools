@@ -16,7 +16,8 @@ args = parser.parse_args()
 DATAPATH = args.input
 OUTPATH = args.output if args.output is not None else "{0}.ccpak".format(os.path.splitext(DATAPATH)[0])
 
-MAPBASE = 0x08DD1700
+# Debug only: map unpacked (.ccpak) to memory address
+#MAPBASE = 0x08DD1700
 
 ## *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 
@@ -43,8 +44,8 @@ with open(DATAPATH, 'rb') as data:
         entid += 1
         offset += 16
 
-    with open("{0}.map".format(os.path.splitext(DATAPATH)[0]), 'w') as mapfile:
-        mapfile.write(",\n".join(map))
+#    with open("{0}.map".format(os.path.splitext(DATAPATH)[0]), 'w') as mapfile:
+#        mapfile.write(",\n".join(map))
 
 
     sys.exit(0)
