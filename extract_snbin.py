@@ -29,7 +29,7 @@ with open(DATAPATH, 'rb') as data:
     with open(OUTPATH, 'wb') as pakfile:
         pakfile.write(uncompbin)
     
-    map = []
+#    map = []
 
     offset = 0
     entid = 0
@@ -39,7 +39,7 @@ with open(DATAPATH, 'rb') as data:
         fn = "z__{0}-{1:03d}.opcodescript".format(os.path.splitext(OUTPATH)[0], entid)
         with open(fn, 'wb') as filebin:
             filebin.write(uncompbin[entoffset:entoffset+entsize])
-        map.append("0x{0:08X}".format(MAPBASE+entoffset))
+#        map.append("0x{0:08X}".format(MAPBASE+entoffset))
 
         entid += 1
         offset += 16
