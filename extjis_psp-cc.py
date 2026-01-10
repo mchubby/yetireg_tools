@@ -255,6 +255,22 @@ opcodeslen = {
 }
 
 ## *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+# Fix quirks (Daitoshokan no Hitsujikai -Library Party- [switch/psv])
+
+if re.search('library', args.input) is not None:
+    opcodeslen.update({
+        0x00: 1,
+        0x3F: 4,
+        0x43: 5,
+        0x46: getlen_opcode_2_plus_sz, # charname
+        0x7A: 11,
+        0x8D: 1,
+        0x92: 15,
+        0x93: 9,
+    })
+    SPECIALPREFIX[0x46] = b'\x81\x9F:NAME:\x81\x9F'
+
+## *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 # Fix quirks (psp)
 
 if re.search('cc.*psp', args.input) is not None:

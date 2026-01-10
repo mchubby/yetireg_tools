@@ -1,4 +1,4 @@
-SET PYTHON=C:\Python33\python
+SET PYTHON=python
 
 for %%f in (*.opcodescript) DO %PYTHON% %~dp0extjis_psp-cc.py %%f
 
